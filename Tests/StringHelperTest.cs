@@ -106,5 +106,14 @@ namespace Tests
                 stringHelper.Ellipsis(String.Empty)
             );  // ще один варіант для Assert.NotThrows
         }
+
+        [TestMethod]
+        public void UriCombineTest()
+        {
+            Assert.AreEqual("/home/index", StringHelper.UrlCombine("/home/", "/index/"), "Test  1 failed");
+            Assert.AreEqual("/home/index", StringHelper.UrlCombine("home", "index"), "Test 2 failed");
+            Assert.AreEqual("/path1/path2", StringHelper.UrlCombine("/path1", "path2"), "Test 3 failed");
+            Assert.AreEqual("/path3/path4", StringHelper.UrlCombine("/path3", "path4"), "Test 4 failed");
+        }
     }
 }
